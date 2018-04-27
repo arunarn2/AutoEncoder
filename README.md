@@ -9,7 +9,8 @@ To build an autoencoder, you need three things: an encoding function, a decoding
 
 ## Stacked Denoising AutoEncoder  
 
-
+ Here is a scatter plot of this latent space for the images from the test set:  
+ ![Scatter plot of latent space](latent.png)
 
 ## Variational AutoEncoder  
 Variational autoencoders are a slightly more modern and interesting take on autoencoding. It's a type of autoencoder with added constraints on the encoded representations being learned. More precisely, it is an autoencoder that learns a latent variable model for its input data. So instead of letting your neural network learn an arbitrary function, you are learning the parameters of a probability distribution modeling your data. If you sample points from this latent distribution, you can generate new input data samples: a VAE is a "generative model".
