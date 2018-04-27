@@ -17,6 +17,10 @@ Variational autoencoders are a slightly more modern and interesting take on auto
 First, an encoder network turns the input samples x into two parameters in a latent space, which we will note z_mean and z_log_sigma. Then, we randomly sample similar points z from the latent normal distribution that is assumed to generate the data, via z = z_mean + exp(z_log_sigma) * epsilon, where epsilon is a random normal tensor. Finally, a decoder network maps these latent space points back to the original input data.
 
 The parameters of the model are trained via two loss functions: a reconstruction loss forcing the decoded samples to match the initial inputs (just like in our previous autoencoders), and the KL divergence between the learned latent distribution and the prior distribution, acting as a regularization term. You could actually get rid of this latter term entirely, although it does help in learning well-formed latent spaces and reducing overfitting to the training data.  
- Here is a scatter plot of this latent space for the images from the test set:  
- ![Scatter plot of latent space](latent.png)
+ Here is a scatter plot of this latent space for the first 5000 images from the test set:  
+ ![Scatter plot of latent space](latent.png | width=100)  
+ 
+ Each of these colored clusters is a type of digit. Close clusters are digits that are structurally similar (i.e. digits that share information in the latent space).
+
+
 
