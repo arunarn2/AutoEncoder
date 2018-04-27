@@ -18,9 +18,9 @@ First, an encoder network turns the input samples x into two parameters in a lat
 
 The parameters of the model are trained via two loss functions: a reconstruction loss forcing the decoded samples to match the initial inputs (just like in our previous autoencoders), and the KL divergence between the learned latent distribution and the prior distribution, acting as a regularization term. You could actually get rid of this latter term entirely, although it does help in learning well-formed latent spaces and reducing overfitting to the training data.  
  Here is a scatter plot of this latent space for the first 5000 images from the test set:  
- ![Scatter plot of latent space](latentspace.png) 
+ ![Scatter plot of latent space](Figure_1.png) 
  
- Each of these colored clusters is a type of digit. Close clusters are digits that are structurally similar (i.e. digits that share information in the latent space).
-
-
-
+ Each of these colored clusters is a type of digit. Close clusters are digits that are structurally similar (i.e. digits that share information in the latent space).  
+  
+Because the VAE is a generative model, we can also use it to generate new digits! Here we will scan the latent plane, sampling latent points at regular intervals, and generating the corresponding digit for each of these points. This gives us a visualization of the latent manifold that "generates" the MNIST digits.  
+![VAE as a generative model](vae_output.png) 
