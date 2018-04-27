@@ -18,7 +18,7 @@ First, an encoder network turns the input samples x into two parameters in a lat
 
 The parameters of the model are trained via two loss functions: a reconstruction loss forcing the decoded samples to match the initial inputs (just like in our previous autoencoders), and the KL divergence between the learned latent distribution and the prior distribution, acting as a regularization term. You could actually get rid of this latter term entirely, although it does help in learning well-formed latent spaces and reducing overfitting to the training data.  
  Here is a scatter plot of this latent space for the first 5000 images from the test set:  
- ![Scatter plot of latent space](latent.png)  {:height="50%" width="50%"}
+ ![Scatter plot of latent space](latentspace.png) 
  
  Each of these colored clusters is a type of digit. Close clusters are digits that are structurally similar (i.e. digits that share information in the latent space).
 
