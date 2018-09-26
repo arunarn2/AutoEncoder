@@ -13,6 +13,8 @@ Auto-encoders have great potential to be useful and one application is in unsupe
 The encoder we use here is a 3 layer convolutional network. We can use the convolutional autoencoder to work on an image denoising problem. We will train the autoencoder to map noisy digits images to clean digits images. We add random gaussian noise to the digits from the mnist dataset. The digit looks like this:  
 ![Noisy MNist](noisy_mnist.png)
 
+### Execution
+python StackedDenoisingAutoEncoder.py
 
 ## Variational AutoEncoder  
 Variational autoencoders are a slightly more modern and interesting take on autoencoding. It's a type of autoencoder with added constraints on the encoded representations being learned. More precisely, it is an autoencoder that learns a latent variable model for its input data. So instead of letting your neural network learn an arbitrary function, you are learning the parameters of a probability distribution modeling your data. If you sample points from this latent distribution, you can generate new input data samples: a VAE is a "generative model".
@@ -27,3 +29,7 @@ The parameters of the model are trained via two loss functions: a reconstruction
   
 Because the VAE is a generative model, we can also use it to generate new digits! Here we will scan the latent plane, sampling latent points at regular intervals, and generating the corresponding digit for each of these points. This gives us a visualization of the latent manifold that "generates" the MNIST digits.  
 ![VAE as a generative model](vae_output.png) 
+
+
+### Execution
+python VariationalAutoEncoder_tf2.py
